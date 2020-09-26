@@ -1,7 +1,9 @@
 import React from "react";
+import { withFormik, Form } from "formik";
 import NumberFormat from "react-number-format";
 import SelectCountry from "components/select-country";
-import { withFormik, Form } from "formik";
+import ReverseCurrency from "components/reverse-currency";
+import ButtonSubmit from "components/button-submit";
 
 const FormCurrencyConverter = () => {
   return (
@@ -12,6 +14,9 @@ const FormCurrencyConverter = () => {
         decimalScale={2}
       />
       <SelectCountry />
+      <ReverseCurrency />
+      <SelectCountry />
+      <ButtonSubmit />
     </Form>
   );
 };
