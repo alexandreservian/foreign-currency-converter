@@ -1,13 +1,11 @@
 import React from "react";
-import { ThemeProvider, CSSReset } from "@chakra-ui/core";
-import CurrencyConverter from "components/currency-converter";
+import FormCurrencyConverter from "components/form-currency-converter";
 
 function App() {
   return (
-    <ThemeProvider>
-      <CSSReset />
-      <CurrencyConverter />
-    </ThemeProvider>
+    <div>
+      <FormCurrencyConverter />
+    </div>
   );
 }
 
