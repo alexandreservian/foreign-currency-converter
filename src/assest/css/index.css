@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "roboto-regular";
+  src: url("../fonts/Roboto-Regular-webfont.eot");
+  src: url("../fonts/Roboto-Regular-webfont.eot?iefix") format("eot"),
+    url("../fonts/Roboto-Regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "roboto-medium";
+  src: url("../fonts/Roboto-Medium-webfont.eot");
+  src: url("../fonts/Roboto-Medium-webfont.eot?iefix") format("eot"),
+    url("../fonts/Roboto-Medium-webfont.woff") format("woff");
+}
+
+body {
+  font: 1em/1.3em "roboto-regular";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
