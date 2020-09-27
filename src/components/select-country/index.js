@@ -1,28 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import Select from "react-select";
-import Icon from "components/icon";
+import { useField } from "formik";
+import FormatOptionLabel from "./format-option-label";
 import currencies from "./currencies";
-import { Option, Label, Base } from "./style";
 
-const formatOptionLabel = ({ value, label }) => {
-  return (
-    <Option>
-      <Icon name={value} />
-      <Label>
-        <Base>{value}</Base> - {label}
-      </Label>
-    </Option>
-  );
-};
+const SelectCountry = ({ name }) => {
+  const [field, , helpers] = useField(name);
+  const { value } = field;
+  const { setValue } = helpers;
 
-const SelectCountry = () => {
-  const [selectedOption, setSelectedOption] = useState();
   return (
     <Select
-      formatOptionLabel={formatOptionLabel}
-      defaultValue={selectedOption}
-      onChange={setSelectedOption}
+      formatOptionLabel={FormatOptionLabel}
       options={currencies}
+      value={value}
+      onChange={value => setValue(value)}
     />
   );
 };
