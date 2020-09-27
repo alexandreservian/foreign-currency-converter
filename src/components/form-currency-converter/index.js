@@ -21,7 +21,12 @@ const handleReverseCurrency = (values, setValues) => () => {
   });
 };
 
-const FormCurrencyConverter = ({ values, setValues }) => {
+const FormCurrencyConverter = ({
+  handleChangeFromCurrenty,
+  isLoadingFromCurrenty,
+  values,
+  setValues,
+}) => {
   return (
     <Form>
       <Container>
@@ -31,7 +36,11 @@ const FormCurrencyConverter = ({ values, setValues }) => {
         </BoxInput>
         <BoxSelect>
           <Label>From Currenty:</Label>
-          <SelectCountry name="fromCurrenty" />
+          <SelectCountry
+            name="fromCurrenty"
+            isLoading={isLoadingFromCurrenty}
+            onChange={({ value }) => handleChangeFromCurrenty(value)}
+          />
         </BoxSelect>
         <BoxButtonReverse>
           <ReverseCurrency onClick={handleReverseCurrency(values, setValues)} />
@@ -58,9 +67,8 @@ const enhanceWithFormik = withFormik({
       label: "US dollar",
     },
   }),
-  handleSubmit: values => {
-    console.log(values);
-  },
+  handleSubmit: (values, { props: { handleOnSubmit } }) =>
+    handleOnSubmit(values),
 });
 
 export default enhanceWithFormik(FormCurrencyConverter);

@@ -4,7 +4,7 @@ import { useField } from "formik";
 import FormatOptionLabel from "./format-option-label";
 import currencies from "./currencies";
 
-const SelectCountry = ({ name }) => {
+const SelectCountry = ({ name, onChange, isLoading }) => {
   const [field, , helpers] = useField(name);
   const { value } = field;
   const { setValue } = helpers;
@@ -14,7 +14,11 @@ const SelectCountry = ({ name }) => {
       formatOptionLabel={FormatOptionLabel}
       options={currencies}
       value={value}
-      onChange={value => setValue(value)}
+      onChange={value => {
+        onChange(value);
+        setValue(value);
+      }}
+      isLoading={isLoading}
     />
   );
 };
