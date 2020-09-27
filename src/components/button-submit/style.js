@@ -7,6 +7,11 @@ const Container = styled.button`
   height: 35px;
   outline: none;
   width: 35px;
+
+  transition: all 0.2s ease 0s;
+  &:active {
+    transform: scale(0.8);
+  }
 `;
 
 export default Container;

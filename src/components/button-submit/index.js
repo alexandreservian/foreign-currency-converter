@@ -4,7 +4,7 @@ import Container from "./style";
 
 const ButtonSubmit = () => {
   return (
-    <Container type="button">
+    <Container type="submit">
       <Svg />
     </Container>
   );
