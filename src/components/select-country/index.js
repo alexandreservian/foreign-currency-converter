@@ -18,14 +18,12 @@ const formatOptionLabel = ({ value, label }) => {
 const SelectCountry = () => {
   const [selectedOption, setSelectedOption] = useState();
   return (
-    <div>
-      <Select
-        formatOptionLabel={formatOptionLabel}
-        defaultValue={selectedOption}
-        onChange={setSelectedOption}
-        options={currencies}
-      />
-    </div>
+    <Select
+      formatOptionLabel={formatOptionLabel}
+      defaultValue={selectedOption}
+      onChange={setSelectedOption}
+      options={currencies}
+    />
   );
 };
 
