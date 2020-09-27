@@ -12,7 +12,14 @@
     url("../fonts/Roboto-Medium-webfont.woff") format("woff");
 }
 
+html,
+body,
+#root {
+  height: 100%;
+}
+
 body {
+  background: #f9fafb;
   font: 1em/1.3em "roboto-regular";
 }
 
