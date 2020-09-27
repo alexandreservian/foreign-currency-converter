@@ -12,24 +12,33 @@ import {
   Label,
 } from "./style";
 
-const FormCurrencyConverter = () => {
+const handleReverseCurrency = (values, setValues) => () => {
+  const { amount, fromCurrenty, toCurrenty } = values;
+  return setValues({
+    amount,
+    fromCurrenty: { ...toCurrenty },
+    toCurrenty: { ...fromCurrenty },
+  });
+};
+
+const FormCurrencyConverter = ({ values, setValues }) => {
   return (
     <Form>
       <Container>
         <BoxInput>
           <Label>Amount:</Label>
-          <DecimalInput />
+          <DecimalInput name="amount" />
         </BoxInput>
         <BoxSelect>
           <Label>From Currenty:</Label>
-          <SelectCountry />
+          <SelectCountry name="fromCurrenty" />
         </BoxSelect>
         <BoxButtonReverse>
-          <ReverseCurrency />
+          <ReverseCurrency onClick={handleReverseCurrency(values, setValues)} />
         </BoxButtonReverse>
         <BoxSelect>
           <Label>To Currenty:</Label>
-          <SelectCountry />
+          <SelectCountry name="toCurrenty" />
         </BoxSelect>
         <ButtonSubmit />
       </Container>
@@ -40,10 +49,18 @@ const FormCurrencyConverter = () => {
 const enhanceWithFormik = withFormik({
   mapPropsToValues: () => ({
     amount: "",
-    fromCurrenty: "",
-    toCurrenty: "",
+    fromCurrenty: {
+      value: "BRL",
+      label: "Brazilian real",
+    },
+    toCurrenty: {
+      value: "USD",
+      label: "US dollar",
+    },
   }),
-  handleSubmit: values => {},
+  handleSubmit: values => {
+    console.log(values);
+  },
 });
 
 export default enhanceWithFormik(FormCurrencyConverter);
