@@ -23,4 +23,8 @@ const SelectCountry = ({ name, onChange, isLoading }) => {
   );
 };
 
+SelectCountry.defaultProps = {
+  onChange: () => {},
+};
+
 export default SelectCountry;
