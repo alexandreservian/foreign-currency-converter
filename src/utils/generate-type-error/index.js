@@ -1,8 +1,8 @@
 /**
- * Dispara um TypeError sua propria mensagem definida
+ * Fires a TypeError your own defined message
  * @function
- * @param  {string} [message=""] Mensagem de erro a ser exibida
- * @return {Error} Retorna uma mensagem de TypeError
+ * @param  {string} [message=""] Error message to be displayed
+ * @return {Error} Returns a TypeError message
  */
 const generateTypeError = (message = "") => {
   throw new TypeError(message);

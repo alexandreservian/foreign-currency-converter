@@ -1,8 +1,8 @@
 /**
- * Verifica variavel é um número
+ * Check variable is a number
  * @function
- * @param  {any} variable Variavel a ser testada
- * @return {boolean} Retorna verdadeiro se o valor for um número
+ * @param  {any} variable Variable to be tested
+ * @return {boolean} Returns true if the value is a number
  */
 
 const isNumber = variable => typeof variable === "number" && isFinite(variable);
