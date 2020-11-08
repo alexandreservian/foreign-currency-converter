@@ -38,6 +38,7 @@ const FormCurrencyConverter = ({
           <Label>From Currenty:</Label>
           <SelectCountry
             name="fromCurrenty"
+            aria-label="From Currenty"
             isLoading={isLoadingFromCurrenty}
             onChange={({ value }) => handleChangeFromCurrenty(value)}
           />
@@ -47,7 +48,7 @@ const FormCurrencyConverter = ({
         </BoxButtonReverse>
         <BoxSelect>
           <Label>To Currenty:</Label>
-          <SelectCountry name="toCurrenty" />
+          <SelectCountry name="toCurrenty" aria-label="To Currenty" />
         </BoxSelect>
         <ButtonSubmit />
       </Container>
