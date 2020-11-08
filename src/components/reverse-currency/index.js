@@ -4,7 +4,7 @@ import Container from "./style";
 
 const ReverseCurrency = ({ onClick }) => {
   return (
-    <Container type="button" onClick={onClick}>
+    <Container aria-label="Flip Currencies" type="button" onClick={onClick}>
       <Svg />
     </Container>
   );
