@@ -4,13 +4,19 @@ import { useField } from "formik";
 import FormatOptionLabel from "./format-option-label";
 import currencies from "./currencies";
 
-const SelectCountry = ({ name, onChange, isLoading }) => {
+const SelectCountry = ({
+  name,
+  "aria-label": ariaLabel,
+  onChange,
+  isLoading,
+}) => {
   const [field, , helpers] = useField(name);
   const { value } = field;
   const { setValue } = helpers;
 
   return (
     <Select
+      aria-label={ariaLabel}
       formatOptionLabel={FormatOptionLabel}
       options={currencies}
       value={value}
