@@ -4,7 +4,7 @@ import Container from "./style";
 
 const ButtonSubmit = () => {
   return (
-    <Container type="submit">
+    <Container aria-label="To Converter" type="submit">
       <Svg />
     </Container>
   );

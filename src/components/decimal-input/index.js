@@ -10,6 +10,7 @@ const DecimalInput = ({ name }) => {
   return (
     <Container>
       <NumberFormat
+        aria-label="Decimal Input"
         type="tel"
         className="input"
         name={name}
