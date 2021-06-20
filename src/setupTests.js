@@ -7,7 +7,7 @@ import "@testing-library/jest-dom/extend-expect";
 
 jest.mock(
   "react-select",
-  () => ({ "aria-label": ariaLabel, options, value, onChange, ...props }) => {
+  () => ({ "aria-label": ariaLabel, options, value, onChange }) => {
     const { value: currentValueSelect } = value;
     function handleChange(event) {
       const option = options.find(
